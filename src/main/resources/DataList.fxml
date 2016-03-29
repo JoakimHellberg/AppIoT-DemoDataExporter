@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.Label?>
+
+<BorderPane
+fx:id="borderPane"
+	fx:controller="com.ericsson.appiot.demo.data.export.controller.DataListController"
+	xmlns:fx="http://javafx.com/fxml" >
+
+	<top>
+		<HBox spacing="10">
+		<Label textFill="#336699">Data from Client API</Label>
+			<ComboBox fx:id="deviceNetworkCB" promptText="Select Device Network" onAction="#handleDeviceNetwork" />
+		</HBox>
+	</top>	
+	
+	<right>
+			<VBox spacing="4" fx:id="tagsPanel" minWidth="200"/>
+	</right>
+
+	<center >
+		<ScrollPane hbarPolicy="NEVER">
+			<TableView fx:id="tableView"/>
+		</ScrollPane>
+	</center>
+
+	<stylesheets>
+		<URL value="@Login.css" />
+	</stylesheets>
+</BorderPane>
